@@ -1,3 +1,5 @@
+D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\config\KafkaProducerConfig.java
+D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\config\KafkaTopicConfig.java
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\controller\CategoryController.java
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\controller\CustomerController.java
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\controller\InventoryController.java
@@ -20,7 +22,13 @@ D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Cop
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\entity\Product.java
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\entity\Shipment.java
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\entity\ShipmentTracking.java
+D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\event\OrderCreatedEvent.java
+D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\event\OrderItemDto.java
+D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\event\ShipmentStatusEvent.java
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\exception\GlobalExceptionHandler.java
+D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\kafka\InventoryEventConsumer.java
+D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\kafka\OrderEventProducer.java
+D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\kafka\ShipmentEventProducer.java
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\OrderManagementApplication.java
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\repository\CategoryRepository.java
 D:\Projects\College\Sem 6\EAI\Tugas\Tugas 4\Modul 9\Github\ordermanagement - Copy\src\main\java\com\example\ordermanagement\repository\CustomerRepository.java
