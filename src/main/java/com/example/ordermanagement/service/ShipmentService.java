@@ -1,20 +1,22 @@
 package com.example.ordermanagement.service;
 
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.example.ordermanagement.dto.ShipmentRequest;
 import com.example.ordermanagement.dto.TrackingUpdateRequest;
 import com.example.ordermanagement.entity.Order;
 import com.example.ordermanagement.entity.Shipment;
 import com.example.ordermanagement.entity.ShipmentTracking;
+import com.example.ordermanagement.kafka.ShipmentEventProducer;
 import com.example.ordermanagement.repository.OrderRepository;
 import com.example.ordermanagement.repository.ShipmentRepository;
 import com.example.ordermanagement.repository.ShipmentTrackingRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ShipmentService {
@@ -27,6 +29,11 @@ public class ShipmentService {
 
     @Autowired
     private OrderRepository orderRepository;
+
+    //For Kafka
+
+    @Autowired
+    private ShipmentEventProducer shipmentEventProducer;
 
     // ─── GET ─────────────────────────────────────────────────────────────────────
 
@@ -148,6 +155,8 @@ public class ShipmentService {
                 saved, request.getLocation(), request.getDescription(), request.getStatus());
         trackingRepository.save(tracking);
 
+        //Tambah for Kafka
+        shipmentEventProducer.sendStatusUpdate(saved, request);
         return saved;
     }
 

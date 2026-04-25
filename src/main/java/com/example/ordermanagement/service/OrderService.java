@@ -11,6 +11,7 @@ import com.example.ordermanagement.entity.Customer;
 import com.example.ordermanagement.entity.Order;
 import com.example.ordermanagement.entity.OrderItem;
 import com.example.ordermanagement.entity.Product;
+import com.example.ordermanagement.kafka.OrderEventProducer;
 import com.example.ordermanagement.repository.CustomerRepository;
 import com.example.ordermanagement.repository.OrderRepository;
 import com.example.ordermanagement.repository.ProductRepository;
@@ -24,6 +25,10 @@ public class OrderService {
     private CustomerRepository customerRepository;
     @Autowired
     private ProductRepository productRepository;
+
+    // Added for Kafka
+    @Autowired
+    private OrderEventProducer orderEventProducer;
 
     @Transactional
     public Order createOrder(Long customerId, List<ItemRequest> itemRequests) {
@@ -52,7 +57,10 @@ public class OrderService {
             total += item.getSubtotal();
         }
         order.setTotalAmount(total);
-        return orderRepository.save(order);
+        // return orderRepository.save(order);
+        Order saved = orderRepository.save(order);
+        orderEventProducer.sendOrderCreated(saved);
+        return saved;
     }
 
     public List<Order> getAllOrders() {
